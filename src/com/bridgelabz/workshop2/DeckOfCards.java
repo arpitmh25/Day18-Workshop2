@@ -2,9 +2,11 @@ package com.bridgelabz.workshop2;
 
 import java.util.ArrayList;
 
+import java.util.ArrayList;
+import java.util.Scanner;
+
 public class DeckOfCards {
     public ArrayList<String> cardsDeck = new ArrayList<>();
-
 
     public void deckofCards() {
 
@@ -25,5 +27,16 @@ public class DeckOfCards {
             System.out.println(element);
         }
         System.out.println();
+    }
+
+    public void noOfPlayers() {
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Enter no of players");
+        int player = scanner.nextInt();
+        if (player >= 2 && player <= 4) {
+            System.out.println(+player + "PlAYER WILL PLAY GAME");
+        } else {
+            System.out.println("Please enter number of players");
+        }
     }
 }
