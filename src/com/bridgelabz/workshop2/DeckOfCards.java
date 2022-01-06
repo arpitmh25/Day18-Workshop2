@@ -6,7 +6,9 @@ import java.util.Scanner;
 public class DeckOfCards {
     public static ArrayList<String> deckCards = new ArrayList<>();
     public static Scanner scanner = new Scanner(System.in);
-//Uc1
+    private static int player;
+
+    //Uc1
     public void welcome() {
         System.out.println("Welcome to the Deck of Card DashBoard");
     }
@@ -31,7 +33,8 @@ public class DeckOfCards {
         }
         System.out.println();
     }
-//Uc2
+
+    //Uc2
     public void noOfPlayers() {
         System.out.print("\nEnter number of players minimum 2 , maximum 4 : ");
         int player = scanner.nextInt();
@@ -43,14 +46,16 @@ public class DeckOfCards {
             scanner.close();
         }
     }
-//Uc3
+
+    //Uc3
     public void seqOfPlayer(int player) {
         System.out.println("\nSequence of cards are below : ");
         for (int i = 1; i <= player; i++) {
             System.out.println("\nPlayer " + i + " Getting card.............");
         }
     }
-//Uc4
+
+    //Uc4
     public static void shuffleCard() {
         System.out.println("shuffling the cards before Distribution");
         ArrayList<String> temp = new ArrayList<String>();
@@ -63,6 +68,17 @@ public class DeckOfCards {
         toDisplay(deckCards);
     }
 
+    //Uc5
+    public static void cardDistribution() {
+        for (int i = 0; i < player; i++) {
+            System.out.print("\nPlayer " + (i + 1) + " got cards:\n");
+            for (int j = 0; j < 9; j++) {
+                System.out.print("\t" + deckCards.get(i + j * player));
+            }
+        }
+        System.out.println();
+    }
+
     public static void main(String[] args) {
         DeckOfCards deckOfCardsGame = new DeckOfCards();
         deckOfCardsGame.welcome();
@@ -70,5 +86,6 @@ public class DeckOfCards {
         deckOfCardsGame.noOfPlayers();
         deckOfCardsGame.seqOfPlayer(4);
         deckOfCardsGame.shuffleCard();
+        deckOfCardsGame.cardDistribution();
     }
 }
