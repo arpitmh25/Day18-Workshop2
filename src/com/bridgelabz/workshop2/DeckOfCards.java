@@ -1,14 +1,8 @@
-package com.bridgelabz.workshop2;
-
-import java.util.ArrayList;
-
-import java.util.ArrayList;
-import java.util.Scanner;
-
 public class DeckOfCards {
     public ArrayList<String> cardsDeck = new ArrayList<>();
+    private int player;
 
-    public void deckofCards() {
+    public void deckOfCards() {
 
         String[] suits = {"Clubs", "Diamonds", "Hearts", "Spades"};
         String[] ranks = {"2", "3", "4", "5", "6", "7", "8", "9", "10", "Jack", "King", "Queen", "Ace"};
@@ -34,9 +28,16 @@ public class DeckOfCards {
         System.out.println("Enter no of players");
         int player = scanner.nextInt();
         if (player >= 2 && player <= 4) {
-            System.out.println(+player + "PlAYER WILL PLAY GAME");
+            System.out.println("\n"+player + "PlAYER WILL PLAY GAME");
         } else {
             System.out.println("Please enter number of players");
+        }
+    }
+
+    public void sequenceOfPlay() {
+        System.out.println("\nSequence of cards are below : ");
+        for (int i = 1; i <= player; i++) {
+            System.out.println("\nPlayer " + i + " Getting card");
         }
     }
 }
